@@ -10,7 +10,7 @@ export default function Main() {
   return (
     <div className="contacts" id="contacts">
       <div className="contacts-header">
-        <h1> Контакты </h1>
+        <h1> Контакти </h1>
       </div>
       <div className="contact-phones">
         <div>
@@ -21,12 +21,12 @@ export default function Main() {
             <a href="tel:+380512312309">+380635551234</a>
           </h2>
           <div className="info">
-            Позвоните нам и мы вас обязательно проконсультируем, или оставьте
-            заявку на обратный звонок и наш менеджер вам перезвонит.
+            Зателефонуйте нам і ми вас обов'язково проконсультуємо, або залиште
+            заявку на зворотній дзвінок і наш менеджер вам зателефонує.
           </div>
           <div>
-            <ul> Мы находимся за адресом</ul>
-            <li> ул. Казацкая 126 </li>
+            <ul>Ми знаходимося за адресою</ul>
+            <li> вул. Козацька 126</li>
           </div>
         </div>
         {isLoaded ? <Map /> : "Loading..."}

@@ -26,8 +26,8 @@ export default function Navbar() {
       </div>
       <div className="nav_a">
         <nav ref={navRef}>
-          <a href="#about_us">О нас</a>
-          <a href="#contacts">Контакты</a>
+          <a href="#about_us">Про нас</a>
+          <a href="#contacts">Контакти</a>
           <button className="nav-btn nav-close-btn" onClick={showNavbar}>
             <FaTimes />
           </button>
