@@ -56,7 +56,7 @@ export default function Form() {
     >
       <h2 style={{fontSize: "19px", paddingBottom: "10px"}}>
         {" "}
-        Оставьте заявку нашему менеджеру и мы Вам перезвоним
+        Залишіть заявку нашому менеджеру і ми Вам передзвонимо
       </h2>
       <input
         style={{width: "200px"}}

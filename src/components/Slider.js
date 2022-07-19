@@ -15,7 +15,7 @@ import mers3 from "../assets/mercedes/mers3.jpg";
 export default function Slider() {
   return (
     <div className="container">
-      <h3> Примеры наших работ </h3>
+      <h3> Приклади наших робіт </h3>
       <Swiper
         slidesPerView={1}
         modules={[Navigation, EffectFade]}
