@@ -108,7 +108,6 @@ form button {
   background-color: rgb(245, 239, 239);
   font-size: 16px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  transition-duration: 0.2s;
 }
 
 form button:hover {
@@ -273,9 +272,6 @@ footer .column {
 }
 
 @media (min-width: 320px) {
-  header nav {
-    transition: 1s;
-  }
   .myswiper {
     height: 350px;
   }
@@ -374,9 +370,6 @@ footer .column {
   }
 }
 @media (min-width: 768px) {
-  header nav {
-    transition: 0s;
-  }
   .contacts {
     width: 80%;
   }

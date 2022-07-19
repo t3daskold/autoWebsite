@@ -19,7 +19,7 @@ export default function Navbar() {
             <img src={white_phone} alt={"logo"} width={15}></img>
           </div>
           <div className="phoneNumber_column">
-            <a href="tel:+380635551234">+380635551234</a>
+            <a href="tel:+380989642523">+380989642523</a>
             <a href="tel:+380634414609">+380634414609</a>
           </div>
         </div>
