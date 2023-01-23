@@ -65,11 +65,11 @@ export default function Form() {
           required: true,
           maxLength: {
             value: 20,
-            message: "Максимальное количество символов 20",
+            message: "Максимальна кількість символів 20",
           },
           minLength: {
             value: 1,
-            message: "Пожалуйста, введдите свое имя",
+            message: "Будь ласка, введіть свое ім'я",
           },
         })}
         pattern="[A-Za-zА-Яа-яґҐЁёІіЇїЄє'’ʼ\s-]{1,20}"
@@ -79,36 +79,11 @@ export default function Form() {
       <div style={{color: "red"}}>
         <p>{errors?.name?.message}</p>
       </div>
-      <InputMask mask={"+38(999)-999-99-99"} value={phone} onChange={e => setPhone(e.target.value)}/>
+      <InputMask mask={"+38(999)-999-99-99"} placeholder={'+38(000)-000-00-00'} value={phone} onChange={e => setPhone(e.target.value)}/>
       </div>
-      {/*<div>*/}
-      {/*  <Controller*/}
-      {/*    control={control}*/}
-      {/*    name="phoneNumber"*/}
-      {/*    defaultValue={""}*/}
-      {/*    rules={{*/}
-      {/*      required: true,*/}
-      {/*      minLength: {*/}
-      {/*        value: 10,*/}
-      {/*        message: "Пожалуйста введите корректный номер телефона",*/}
-      {/*      },*/}
-      {/*    }}*/}
-      {/*    render={({field}) => (*/}
-      {/*      <MaskedInput*/}
-      {/*        {...field}*/}
-      {/*        name="phoneNumber"*/}
-      {/*        style={{width: 200}}*/}
-      {/*        maskGenerator={maskGenerator}*/}
-      {/*        placeholder={"+38(xxx) xxx xx xx"}*/}
-      {/*      ></MaskedInput>*/}
-      {/*    )}*/}
-      {/*  ></Controller>*/}
-      {/*  <div style={{color: "red"}}>*/}
-      {/*    <p>{errors?.phoneNumber?.message}</p>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
 
-      <button type="submit"> Отправить заявку </button>
+
+      <button type="submit"> Відправити заявку </button>
       <ToastContainer style={{color: "black"}} />
     </form>
   );

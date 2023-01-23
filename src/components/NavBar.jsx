@@ -33,7 +33,7 @@ export default function NavBar() {
           <NavLink to="/#about_us">Про нас</NavLink>
           <NavLink to="/#contacts">Контакти</NavLink>
           <Link to={'/gallery'}>
-            Приклад наших робіт
+            Приклади наших робіт
           </Link>
           <button className="nav-btn nav-close-btn" onClick={showNavbar}>
             <FaTimes />
