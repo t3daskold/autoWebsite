@@ -1,9 +1,11 @@
-import Slider from "./Slider.js";
+import Slider from "./Slider.jsx";
 import Form from "./Form";
 import Contacts from "./Contacts";
-import Icoline from "./Icoline.js";
+import Icoline from "./icoline/Icoline.js";
+import {useScroll} from "../hooks/useScroll";
 
 export default function Main() {
+  useScroll()
   return (
     <div className="head_wrapper">
       <div className="wrapper">

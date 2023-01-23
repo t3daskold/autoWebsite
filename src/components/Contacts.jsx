@@ -1,4 +1,4 @@
-import Map from "./Map.js";
+import Map from "./Map.jsx";
 import {useJsApiLoader} from "@react-google-maps/api";
 
 export default function Main() {
@@ -8,17 +8,17 @@ export default function Main() {
     googleMapsApiKey: API_KEY,
   });
   return (
-    <div className="contacts" id="contacts">
+    <div className="contacts" id={"contacts"}>
       <div className="contacts-header">
         <h1> Контакти </h1>
       </div>
       <div className="contact-phones">
         <div>
           <h2>
-            <a href="tel:+380635551234">+380635551234</a>
+            <a href="tel:+380635551234">+380989642523</a>
           </h2>
           <h2>
-            <a href="tel:+380512312309">+380635551234</a>
+            <a href="tel:+380512312309">+380634414609</a>
           </h2>
           <div className="info">
             Зателефонуйте нам і ми вас обов'язково проконсультуємо, або залиште

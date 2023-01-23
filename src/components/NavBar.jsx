@@ -2,17 +2,20 @@ import {FaBars, FaTimes} from "react-icons/fa";
 import {useRef} from "react";
 import logo from "../assets/logo.png";
 import white_phone from "../assets/white_phone.png";
-export default function Navbar() {
+import {Link, NavLink} from "react-router-dom";
+export default function NavBar() {
   const navRef = useRef();
   const showNavbar = () => {
-    navRef.current.classList.toggle("responsive_nav");
+    navRef.current?.classList.toggle("responsive_nav");
   };
+
+
   return (
     <header>
       <div className="icon">
-        <div>
+        <Link to={'/'}>
           <img src={logo} alt="logo" width={100}></img>
-        </div>
+        </Link>
 
         <div className="phoneNumber">
           <div>
@@ -23,11 +26,15 @@ export default function Navbar() {
             <a href="tel:+380634414609">+380634414609</a>
           </div>
         </div>
+
       </div>
       <div className="nav_a">
         <nav ref={navRef}>
-          <a href="#about_us">Про нас</a>
-          <a href="#contacts">Контакти</a>
+          <NavLink to="/#about_us">Про нас</NavLink>
+          <NavLink to="/#contacts">Контакти</NavLink>
+          <Link to={'/gallery'}>
+            Приклад наших робіт
+          </Link>
           <button className="nav-btn nav-close-btn" onClick={showNavbar}>
             <FaTimes />
           </button>

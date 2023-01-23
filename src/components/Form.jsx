@@ -1,11 +1,11 @@
 import {ToastContainer, toast} from "react-toastify";
-import React from "react";
+import React, {useState} from "react";
 import "react-toastify/dist/ReactToastify.css";
-import {useForm, Controller} from "react-hook-form";
+import {useForm} from "react-hook-form";
+import InputMask from 'react-input-mask';
 
-import {MaskedInput, createDefaultMaskGenerator} from "react-hook-mask";
 export default function Form() {
-  const maskGenerator = createDefaultMaskGenerator("+38(999) 999 99 99");
+  const [phone,setPhone] = useState('');
 
   function onSubmit(data) {
     toast.dark(
@@ -22,7 +22,7 @@ export default function Form() {
     );
     fetch(
       `https://api.telegram.org/bot5539510239:AAGNPapFMWa3kbGnccTw-zMg5AthS2jqy98/sendMessage?chat_id=821323433&text=${[
-        `Новая Заявка! \n Имя:${data.name},\n Номер:${data.phoneNumber}`,
+        `Новая Заявка! \n Имя:${data.name},\n Номер:${phone}`,
       ]}`,
       {
         method: "POST",
@@ -44,10 +44,10 @@ export default function Form() {
     formState: {errors},
     handleSubmit,
     reset,
-    control,
   } = useForm({
     mode: "onSubmit",
   });
+
   return (
     <form
       method="POST"
@@ -58,8 +58,9 @@ export default function Form() {
         {" "}
         Залишіть заявку нашому менеджеру і ми Вам передзвонимо
       </h2>
+      <div style={{width: "230px"}}>
       <input
-        style={{width: "200px"}}
+
         {...register("name", {
           required: true,
           maxLength: {
@@ -78,32 +79,34 @@ export default function Form() {
       <div style={{color: "red"}}>
         <p>{errors?.name?.message}</p>
       </div>
-      <div>
-        <Controller
-          control={control}
-          name="phoneNumber"
-          defaultValue={""}
-          rules={{
-            required: true,
-            minLength: {
-              value: 10,
-              message: "Пожалуйста введите корректный номер телефона",
-            },
-          }}
-          render={({field}) => (
-            <MaskedInput
-              {...field}
-              name="phoneNumber"
-              style={{width: 200}}
-              maskGenerator={maskGenerator}
-              placeholder={"+38(xxx) xxx xx xx"}
-            ></MaskedInput>
-          )}
-        ></Controller>
-        <div style={{color: "red"}}>
-          <p>{errors?.phoneNumber?.message}</p>
-        </div>
+      <InputMask mask={"+38(999)-999-99-99"} value={phone} onChange={e => setPhone(e.target.value)}/>
       </div>
+      {/*<div>*/}
+      {/*  <Controller*/}
+      {/*    control={control}*/}
+      {/*    name="phoneNumber"*/}
+      {/*    defaultValue={""}*/}
+      {/*    rules={{*/}
+      {/*      required: true,*/}
+      {/*      minLength: {*/}
+      {/*        value: 10,*/}
+      {/*        message: "Пожалуйста введите корректный номер телефона",*/}
+      {/*      },*/}
+      {/*    }}*/}
+      {/*    render={({field}) => (*/}
+      {/*      <MaskedInput*/}
+      {/*        {...field}*/}
+      {/*        name="phoneNumber"*/}
+      {/*        style={{width: 200}}*/}
+      {/*        maskGenerator={maskGenerator}*/}
+      {/*        placeholder={"+38(xxx) xxx xx xx"}*/}
+      {/*      ></MaskedInput>*/}
+      {/*    )}*/}
+      {/*  ></Controller>*/}
+      {/*  <div style={{color: "red"}}>*/}
+      {/*    <p>{errors?.phoneNumber?.message}</p>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
 
       <button type="submit"> Отправить заявку </button>
       <ToastContainer style={{color: "black"}} />
