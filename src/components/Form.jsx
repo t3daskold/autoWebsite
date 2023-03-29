@@ -9,7 +9,7 @@ export default function Form() {
 
   function onSubmit(data) {
     toast.dark(
-      "Ваша заявка отправлена!\nОжидайте звонка от нашего менеджера.",
+      "Вашу заявку відправлено!\nЧекайте на дзвінок від нашого менеджера.",
       {
         position: "top-right",
         autoClose: 5000,
@@ -73,13 +73,13 @@ export default function Form() {
           },
         })}
         pattern="[A-Za-zА-Яа-яґҐЁёІіЇїЄє'’ʼ\s-]{1,20}"
-        placeholder="Имя"
+        placeholder="Ім'я"
       />
 
       <div style={{color: "red"}}>
         <p>{errors?.name?.message}</p>
       </div>
-      <InputMask mask={"+38(999)-999-99-99"} placeholder={'+38(000)-000-00-00'} value={phone} onChange={e => setPhone(e.target.value)}/>
+      <InputMask mask={"+380(99)-999-99-99"} placeholder={'+380(00)-000-00-00'} value={phone} onChange={e => setPhone(e.target.value)}/>
       </div>
 
 
