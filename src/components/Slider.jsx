@@ -15,6 +15,7 @@ import mers3 from "../assets/mercedes/mers3.jpg";
 export default function Slider() {
   const imageArr = [car1,car3,car4,car5,car2,mers1,mers2,mers3]
   return (
+
     <div className="container">
       <h3> Приклади наших робіт </h3>
       <Swiper
@@ -26,9 +27,8 @@ export default function Slider() {
       >
           {
             imageArr.map((el,i) => {
-
-              return <SwiperSlide className="swiperslide">
-                  <img src={el} alt={i}/>
+              return <SwiperSlide className="swiperslide" key={i}>
+                  <img src={el} alt={i+'img'}/>
                  </SwiperSlide>
             })
           }
