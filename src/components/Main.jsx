@@ -1,7 +1,7 @@
 import Slider from "./Slider.jsx";
 import Form from "./Form";
 import Contacts from "./Contacts";
-import Icoline from "./icoline/Icoline.js";
+import Icoline from "./icoline/Icoline.jsx";
 import {useScroll} from "../hooks/useScroll";
 
 export default function Main() {

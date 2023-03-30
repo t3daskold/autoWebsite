@@ -13,6 +13,7 @@ import mers2 from "../assets/mercedes/mers2.jpg";
 import mers3 from "../assets/mercedes/mers3.jpg";
 
 export default function Slider() {
+  const imageArr = [car1,car3,car4,car5,car2,mers1,mers2,mers3]
   return (
     <div className="container">
       <h3> Приклади наших робіт </h3>
@@ -23,30 +24,14 @@ export default function Slider() {
         className="myswiper"
         speed={800}
       >
-        <SwiperSlide className="swiperslide">
-          <img src={car1} alt=""></img>
-        </SwiperSlide>
-        <SwiperSlide className="swiperslide">
-          <img src={car3} alt=""></img>
-        </SwiperSlide>
-        <SwiperSlide className="swiperslide">
-          <img src={car4} alt=""></img>
-        </SwiperSlide>
-        <SwiperSlide className="swiperslide">
-          <img src={car5} alt=""></img>
-        </SwiperSlide>
-        <SwiperSlide className="swiperslide">
-          <img src={car2} alt=""></img>
-        </SwiperSlide>
-        <SwiperSlide className="swiperslide">
-          <img src={mers1} alt=""></img>
-        </SwiperSlide>
-        <SwiperSlide className="swiperslide">
-          <img src={mers2} alt=""></img>
-        </SwiperSlide>
-        <SwiperSlide className="swiperslide">
-          <img src={mers3} alt=""></img>
-        </SwiperSlide>
+          {
+            imageArr.map((el,i) => {
+
+              return <SwiperSlide className="swiperslide">
+                  <img src={el} alt={i}/>
+                 </SwiperSlide>
+            })
+          }
       </Swiper>
     </div>
   );
