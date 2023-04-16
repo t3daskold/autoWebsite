@@ -1,28 +1,74 @@
 import Slider from "./Slider.jsx";
-import Form from "./Form";
-import Contacts from "./Contacts";
-import Icoline from "./icoline/Icoline.jsx";
-import {useScroll} from "../hooks/useScroll";
+import {Container,Wrapper,Grid,GridItem} from './main/styled'
 
+
+import Text from '../components/text/Text'
+
+import bodyRepair from "../assets/icoline/bodyRepair.svg"
+import oilChange from "../assets/icoline/oilChange.svg"
+import carPainting from "../assets/icoline/carPainting.svg"
+import transmission from "../assets/icoline/transmission.svg"
+import {useState} from "react";
+import Modal from "./form/Form";
 export default function Main() {
-  useScroll()
+  const typeOfRepair = [
+    {
+      img:bodyRepair,
+      text:"рихтування авто, рихтування без фарбування, заміна деталей без зварювання"
+    },
+    {
+      img:carPainting,
+      text:"фарбування, локальне фарбування,ремонт та фарбування бамперів"
+    },
+    {
+      img: oilChange,
+      text:"заміна тех.рідин",
+    },
+    {
+      img: transmission,
+      text:"ремонт ходової, ремонт трансмісії, ремонт рульового управління"
+    }]
+
   return (
-    <div className="head_wrapper">
-      <div className="wrapper">
-        <Form />
-        <div className="about_us" id="about_us">
-          <h2> Про нас </h2>
-          Наш автосервіс надає такі види робіт: рихтування автомобілів,
-          фарбування, локальне фарбування, рихтування без фарбування, заміна
-          тех.рідин, ремонт ходової, ремонт рульового управління, ремонт
-          трансмісії, заміна деталей без зварювання, ремонт та фарбування
-          бамперів.
-        </div>
+    <Wrapper>
+        <Container 
+          margin={'10px 0 10px 0'}
+          width={'1140px'}>
+          <Text
+          padding={'0 0 20px 0'}
+          fontWeight={500} 
+          fontSize={'36px'}
+          string={'Козацький сервіс'} textColor={'black'}/>
+          <Text
+          padding={'0 0 20px 0'}
+          fontSize={'22px'}
+          string={"Наш сервіс з ремонту автомобілів пропонує" 
+          + "широкий спектр послуг, пов'язаних із обслуговуванням та ремонтом автомобілів."}
+          textColor={'black'}
+          />
+          <Text 
+            fontSize={'23px'}
+            textColor={'black'}
+            string={""}/>
+          <Text 
+            fontSize={'22px'}
+            string={"Ми надаємо такі види робіт:"}            
+            textColor={'black'}
+           />
+           <Grid>
+          {
+            typeOfRepair.map((el,i) => <GridItem>
+              <img src={el.img} height={156} alt={i + 'icon'}/>
+              <Text 
+              key={i} 
+              string={el.text} 
+              fontSize={'17px'}
+              textColor={'black'}/>
+              </GridItem>)
+          }    
+          </Grid>
+        </Container>
         <Slider />
-        <h2>Ми з радістю надамо Вам повний спектр послуг:</h2>
-        <Icoline />
-      </div>
-      <Contacts />
-    </div>
+    </Wrapper>
   );
 }

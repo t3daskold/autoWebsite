@@ -15,24 +15,20 @@ import mers3 from "../assets/mercedes/mers3.jpg";
 export default function Slider() {
   const imageArr = [car1,car3,car4,car5,car2,mers1,mers2,mers3]
   return (
-
-    <div className="container">
-      <h3> Приклади наших робіт </h3>
       <Swiper
+      className="swiper"
         slidesPerView={1}
         modules={[Navigation, EffectFade]}
         navigation
-        className="myswiper"
         speed={800}
       >
           {
             imageArr.map((el,i) => {
               return <SwiperSlide className="swiperslide" key={i}>
-                  <img src={el} alt={i+'img'}/>
+                  <img src={el} alt={i+'img'} style={{objectFit: 'cover'}}/>
                  </SwiperSlide>
             })
           }
       </Swiper>
-    </div>
   );
 }
