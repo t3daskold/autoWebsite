@@ -14,12 +14,7 @@ const data = [
         imageBefore: g1,
         imageAfter: g2,
     },
-    {
-        title: "Mazda",
-        description: "Полировка кузова.",
-        imageBefore: mz,
-        imageAfter: null,
-    },
+
     {
         title: "Audi A6",
         description: "Кузовной ремонт, рихтовка.",

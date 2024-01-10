@@ -30,8 +30,9 @@ export default function NavBar() {
       </div>
       <div className="nav_a">
         <nav ref={navRef}>
-          <NavLink to="/#about_us">Про нас</NavLink>
           <NavLink to="/#contacts">Контакти</NavLink>
+          <Link to={'/workers'}>Майстри</Link>
+          <Link to={'/aboutUs'}>Про нас</Link>
           <Link to={'/gallery'}>
             Приклади наших робіт
           </Link>

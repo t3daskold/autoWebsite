@@ -1,5 +1,6 @@
 import { GoogleMap, MarkerF } from "@react-google-maps/api";
 import React, { useMemo } from "react";
+import mapImage from '../assets/map.png'
 
 const defaultOptions = {
   panControl: true,
@@ -15,7 +16,6 @@ const defaultOptions = {
   disableDoubleClickZoom: true,
   fullScreenControl: false,
 };
-
 export default function Map() {
   const mapRef = React.useRef(undefined);
 
@@ -29,14 +29,10 @@ export default function Map() {
   const center = useMemo(() => ({ lat: 50.39642, lng: 30.48825 }), []);
 
   return (
-    <GoogleMap
-      mapContainerClassName="map-container"
-      center={center}
-      onLoad={onLoad}
-      onUnmount={onUnmount}
-      options={defaultOptions}
+    <img
+      className="map-container"
+      src={mapImage}
     >
-      <MarkerF position={center} />
-    </GoogleMap>
+    </img>
   );
 }
