@@ -16,7 +16,7 @@ const Gallery = () => {
                                 </ImageContainer>
                                     { e.imageAfter ?
                                         <ImageContainer>
-                                            <Description>После</Description>
+                                            <Description>Після</Description>
                                             <Image src={e.imageAfter} alt={'asd'}/>
                                         </ImageContainer> : <ImageContainer></ImageContainer>}
                                 </Flex>

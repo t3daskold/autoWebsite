@@ -10,26 +10,26 @@ import part2 from './assets/auto/part2.jpg'
 const data = [
     {
         title: "Geely",
-        description: "Восстановление геометрии кузова, лакокрасочного покрытия.",
+        description: "Відновлення геометрії кузова, лакофарбового покриття\n.",
         imageBefore: g1,
         imageAfter: g2,
     },
 
     {
         title: "Audi A6",
-        description: "Кузовной ремонт, рихтовка.",
+        description: "Кузовний ремонт, рихтування.",
         imageBefore: audi1,
         imageAfter: audi2,
     },
     {
         title: "Ford Eclipse",
-        description: "Рихтовка, покраска.",
+        description: "Рихтування, фарбування.",
         imageBefore: part1,
         imageAfter: part2,
     },
     {
         title: "Chevrolet lacetti.",
-        description: "Рихтовка, покраска.",
+        description: "Рихтування, фарбування.",
         imageBefore: blue1,
         imageAfter: blue2,
     }
